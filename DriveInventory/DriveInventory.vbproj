@@ -87,13 +87,6 @@
     <Compile Include="MediaDatabaseDataSet.vb">
       <DependentUpon>MediaDatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MediaList.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MediaList.Designer.vb">
-      <DependentUpon>MediaList.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MediaMain.Designer.vb">
       <DependentUpon>MediaMain.vb</DependentUpon>
     </Compile>
@@ -119,9 +112,6 @@
   <ItemGroup>
     <EmbeddedResource Include="MediaAdd.resx">
       <DependentUpon>MediaAdd.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MediaList.resx">
-      <DependentUpon>MediaList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MediaMain.resx">
       <DependentUpon>MediaMain.vb</DependentUpon>
