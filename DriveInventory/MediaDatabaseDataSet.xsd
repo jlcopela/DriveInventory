@@ -66,7 +66,7 @@ SELECT Id, MediaDescription, MediaVolume, MediaKey FROM Media WHERE (Id = @Id)</
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="MediaDescription" DataSetColumn="MediaDescription" />
               <Mapping SourceColumn="MediaVolume" DataSetColumn="MediaVolume" />
-              <Mapping SourceColumn="MediaKey" DataSetColumn="MediaLabel" />
+              <Mapping SourceColumn="MediaKey" DataSetColumn="MediaKey" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -156,7 +156,7 @@ SELECT Id, FileID, FileName, Directory, Path, Extension FROM MediaFiles WHERE (F
         <xs:element name="Media" msprop:Generator_TableClassName="MediaDataTable" msprop:Generator_TableVarName="tableMedia" msprop:Generator_RowChangedName="MediaRowChanged" msprop:Generator_TablePropName="Media" msprop:Generator_RowDeletingName="MediaRowDeleting" msprop:Generator_RowChangingName="MediaRowChanging" msprop:Generator_RowEvHandlerName="MediaRowChangeEventHandler" msprop:Generator_RowDeletedName="MediaRowDeleted" msprop:Generator_RowClassName="MediaRow" msprop:Generator_UserTableName="Media" msprop:Generator_RowEvArgName="MediaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
               <xs:element name="MediaDescription" msprop:Generator_ColumnVarNameInTable="columnMediaDescription" msprop:Generator_ColumnPropNameInRow="MediaDescription" msprop:Generator_ColumnPropNameInTable="MediaDescriptionColumn" msprop:Generator_UserColumnName="MediaDescription" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -171,7 +171,7 @@ SELECT Id, FileID, FileName, Directory, Path, Extension FROM MediaFiles WHERE (F
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MediaLabel" msprop:Generator_ColumnVarNameInTable="columnMediaLabel" msprop:Generator_ColumnPropNameInRow="MediaLabel" msprop:Generator_ColumnPropNameInTable="MediaLabelColumn" msprop:Generator_UserColumnName="MediaLabel" minOccurs="0">
+              <xs:element name="MediaKey" msprop:Generator_ColumnVarNameInTable="columnMediaKey" msprop:Generator_ColumnPropNameInRow="MediaKey" msprop:Generator_ColumnPropNameInTable="MediaKeyColumn" msprop:Generator_UserColumnName="MediaKey" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
