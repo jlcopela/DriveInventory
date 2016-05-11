@@ -178,6 +178,7 @@ SELECT Id, FileID, FileName, Directory, Path, Extension FROM MediaFiles WHERE (F
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="MediaImage" msprop:Generator_ColumnVarNameInTable="columnMediaImage" msprop:Generator_ColumnPropNameInRow="MediaImage" msprop:Generator_ColumnPropNameInTable="MediaImageColumn" msprop:Generator_UserColumnName="MediaImage" type="xs:anyType" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

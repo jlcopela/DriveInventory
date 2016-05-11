@@ -109,4 +109,17 @@ Public Class MediaAdd
         Me.MediaTableAdapter.Fill(Me.MediaDatabaseDataSet.Media)
 
     End Sub
+
+    Private Sub btnDiskImage_Click(sender As Object, e As EventArgs) Handles btnDiskImage.Click
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+            PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnViewFiles.Click
+        Dim selectedDrive As String = driveListView.SelectedItems(0).Text
+        FolderBrowserDialog1.SelectedPath = selectedDrive
+        FolderBrowserDialog1.ShowDialog()
+
+    End Sub
 End Class

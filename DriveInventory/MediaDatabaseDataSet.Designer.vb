@@ -326,6 +326,8 @@ Partial Public Class MediaDatabaseDataSet
         
         Private columnMediaKey As Global.System.Data.DataColumn
         
+        Private columnMediaImage As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -394,6 +396,14 @@ Partial Public Class MediaDatabaseDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MediaImageColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMediaImage
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -430,9 +440,9 @@ Partial Public Class MediaDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMediaRow(ByVal MediaDescription As String, ByVal MediaVolume As String, ByVal MediaKey As String) As MediaRow
+        Public Overloads Function AddMediaRow(ByVal MediaDescription As String, ByVal MediaVolume As String, ByVal MediaKey As String, ByVal MediaImage As Object) As MediaRow
             Dim rowMediaRow As MediaRow = CType(Me.NewRow,MediaRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, MediaDescription, MediaVolume, MediaKey}
+            Dim columnValuesArray() As Object = New Object() {Nothing, MediaDescription, MediaVolume, MediaKey, MediaImage}
             rowMediaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMediaRow)
             Return rowMediaRow
@@ -465,6 +475,7 @@ Partial Public Class MediaDatabaseDataSet
             Me.columnMediaDescription = MyBase.Columns("MediaDescription")
             Me.columnMediaVolume = MyBase.Columns("MediaVolume")
             Me.columnMediaKey = MyBase.Columns("MediaKey")
+            Me.columnMediaImage = MyBase.Columns("MediaImage")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -478,6 +489,8 @@ Partial Public Class MediaDatabaseDataSet
             MyBase.Columns.Add(Me.columnMediaVolume)
             Me.columnMediaKey = New Global.System.Data.DataColumn("MediaKey", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMediaKey)
+            Me.columnMediaImage = New Global.System.Data.DataColumn("MediaImage", GetType(Object), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMediaImage)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1024,6 +1037,21 @@ Partial Public Class MediaDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MediaImage() As Object
+            Get
+                Try 
+                    Return CType(Me(Me.tableMedia.MediaImageColumn),Object)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MediaImage' in table 'Media' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMedia.MediaImageColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsMediaDescriptionNull() As Boolean
             Return Me.IsNull(Me.tableMedia.MediaDescriptionColumn)
         End Function
@@ -1056,6 +1084,18 @@ Partial Public Class MediaDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetMediaKeyNull()
             Me(Me.tableMedia.MediaKeyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMediaImageNull() As Boolean
+            Return Me.IsNull(Me.tableMedia.MediaImageColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMediaImageNull()
+            Me(Me.tableMedia.MediaImageColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
